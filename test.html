@@ -1,0 +1,60 @@
+<!DOCTYPE html>  
+<html>  
+  
+<head>  
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">  
+    <meta http-equiv="U-XA-Compatible" content="IE=edge,chrome=1">  
+    <meta http-equiv="X-UA-Compatible" content="IE=9">  
+    <meta name="viewport" content="width=device-width,initial-scale=1">  
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">  
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>  
+</head>  
+  
+<body>  
+    <img id="cvsToday" src="">  
+    <label id="lblWeather">--</label>  
+    <label id="lblTemperature">--</label>  
+    <label id="lblCurTemp">--</label>  
+    <script type="text/javascript">  
+        // 获取城市  
+        // var cityUrl = 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js';  
+        $.getScript(  
+            // cityUrl,  
+            function() {  
+                var city = remote_ip_info.city; // 获取城市  
+                // 获取天气预报  
+                $.ajax({  
+                    url: "http://weather.mail.163.com/weather/xhr/weather/info.do?sid=&uid=&host=&ver=js6&fontface=yahei&style=1&skin=seablue&color=&city=101100410",  
+                    type: "get",  
+                    dataType: "jsonp",  
+                    // scriptCharset: "gbk",  
+                    success: function(baiduTQ) {  
+                        try {  
+                            if (baiduTQ == null || baiduTQ.error != 0 || baiduTQ.status != "success" || baiduTQ.results.count == 0) {  
+                                document.getElementById("lblTemperature").innerHTML = "--";  
+                                document.getElementById("lblWeather").innerHTML = "--";  
+                                document.getElementById("lblCurTemp").innerHTML = "--";  
+                                return;  
+                            }  
+                            if (baiduTQ.results[0].weather_data.length > 0) {  
+                                var data = baiduTQ.results[0].weather_data[0];  
+                                var split = data.date.split("：");  
+                                document.getElementById("lblTemperature").innerHTML = city + "[" + data.temperature + "]";  
+                                document.getElementById("lblWeather").innerHTML = data.weather;  
+                                var curTemp = split.pop();  
+                                document.getElementById("lblCurTemp").innerHTML = curTemp.substring(0, curTemp.length - 1);  
+  
+                                var imgPath = data.dayPictureUrl;  
+                                document.getElementById("cvsToday").src = imgPath;  
+                            }  
+                        } catch (err) {  
+                            alert(err)  
+                        }  
+                    }  
+                });  
+            });  
+    </script>  
+    
+</body>  
+  
+</html>  

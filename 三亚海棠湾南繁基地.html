@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>三亚海棠湾南繁基地</title>
+	<link rel="stylesheet" type="text/css" href="boot/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" href="css/video-js.min.css">
+	<!-- 第三个兼容老式浏览器 -->
+	<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		
+      <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>  
+  <![endif]-->
+
+</head>
+<body>
+	<div class="box">
+		<!-- 头部 -->
+		<div class="row aa">
+			<div class="col-xs-12 col-sm-12 col-md-12 top-nav ">
+				<img src="images/top.png" height="50" >
+				<div class="name">三亚海棠湾南繁基地</div>
+			</div>	
+		</div>
+		<div class="cont">
+			<div class="row" style="margin:8px 0 0 0">
+				<!-- 水温 -->
+				<div class="col-xs-12 col-sm-6 col-md-4 sw">
+					<div class="row wenbg">
+						<div class="col-sm-6 col-md-12">
+							<img src="images/line1.png" width="88%">
+						</div>
+					</div>
+					<!-- 水温图 -->
+					<div class="col-sm-6 col-md-12 shuiwen">
+						<div id="container1" style="height: 100%;width: 88%"></div>
+						<div id="shed" style="height: 100%;width: 88%;"></div>
+					</div>
+				</div>
+				<!-- 天气 -->
+				<div class="col-sm-6 col-md-4">
+					<div class="row">
+						<!-- <div class="col-sm-6 col-md-12 weather">
+							<iframe width="100%" scrolling="no" height="25" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=11&color=%23FFFFFF&bgc=%230070C0&bdc=%23&icon=1&site=16"></iframe>
+						</div> -->
+
+						<!-- 天气 -->
+						<div class="col-sm-12 col-md-12 tianqi">
+							<div class="vieo">
+								<img src="images/vieo.png" width="98%" alt="">
+								<div class="ifr">
+									<div class="f1">
+										<!-- <div id="weather"></div> -->
+										<p class="timer">
+											
+										</p>										
+										<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=48&color=%23FFFFFF&bgc=%23&site=24&py=sanya" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+										
+										
+
+									</div>
+
+									<!-- <div class="f2"> -->
+										<!-- <iframe scrolling="no" src="http://tianqiapi.com/api.php?style=ts&skin=yahoo&color=ffffff" frameborder="0" allowtransparency="true"></iframe> -->
+										<!-- <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=7&color=%23FFFFFF&site=14&py=sanya"  frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> -->
+										<!-- <iframe scrolling="no" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=8&color=%23FFFFFF&icon=1&num=3&site=16"></iframe> -->
+
+
+										<!-- </div> -->
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 水位 -->
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-sm-6 col-md-12 line1">
+								<img src="images/line1.png" width="98%">
+							</div>
+						</div>
+						<!-- 水位图 -->
+						<div class="col-sm-6 col-md-12 shuiwei">
+							<div id="container2" style="height: 100%"></div>
+						</div>
+					</div>
+				</div>
+				<!-- 溶解氧 -->
+				<div class="row">	
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<div class="row">
+							<div class="col-sm-6 col-md-12 erline">
+								<img src="images/line1.png" width="88%">
+							</div>
+							<!-- 开关 -->
+							<div class="col-sm-6 col-md-12 rongjie">
+								<!-- <div id="container3" style="height: 100%;width: 88%"></div> -->
+								<div id="container3" width="88%" >
+									<div class="title_state">
+										<div>
+											<span>[</span>
+											<span>大棚状态</span>
+											<span>]</span>
+										</div>
+									</div>
+
+									<div class="biao">
+										<div class="swtichbg">
+											<div>
+												<p>办公楼</p>
+												<div>
+													<div id="div1" class="open1">
+														<div id="div2" class="open2"></div>
+													</div>	
+												</div>										
+											</div>
+											<div>
+												<p>办公楼</p>
+												<div>
+													<div id="div3" class="open1">
+														<div id="div4" class="open2"></div>
+													</div>	
+												</div>										
+											</div>											
+											<div>
+												<p>办公楼</p>
+												<div>
+													<div id="div5" class="close1">
+														<div id="div6" class="close2"></div>
+													</div>	
+												</div>										
+											</div>
+											<div>
+												<p>办公楼</p>
+												<div>
+													<div id="div7" class="close1">
+														<div id="div8" class="close2"></div>
+													</div>	
+												</div>										
+											</div>											
+											<div>
+												<p>办公楼</p>
+												<div>
+													<div id="div9" class="open1">
+														<div id="div10" class="open2"></div>
+													</div>	
+												</div>										
+											</div>																						
+
+										</div>										
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 地图 -->
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<div class="row">
+							<div class="col-sm-6 col-md-12 line2">
+								<img src="images/line2.png">
+							</div>
+							<div class="col-sm-6 col-md-12 ditu">
+								<!-- 地图 -->
+								<div class="bk">
+									<img src="images/sanya.png" alt="" width="98%">
+								</div>
+								<div id="mainMap" style="height:100%;width:100%;"></div>
+							</div>
+							<div class="col-sm-6 col-md-12 line2">
+								<img src="images/line2.png">
+							</div>
+						</div>
+					</div>
+					<!-- ph -->
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-sm-6 col-md-12 line1 erline">
+								<img src="images/line1.png" width="98%">
+							</div>
+							<div class="col-sm-6 col-md-12 ph">
+								<!-- ph值图 -->
+								<!-- <div id="container4" style="height: 100%"></div> -->
+								<div id="container4">
+									<video id="my-video" class="video-js" controls preload="auto" data-setup="{}"><!-- poster="images/m.png" -->
+										<source src="http://jq22com.qiniudn.com/jq22-sp.mp4" type="video/mp4">
+											<!-- <p class="vjs-no-js">
+												To view this video please enable JavaScript, and consider upgrading to a web browser that
+												<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+											</p> -->
+										</video>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 尾部 -->
+				<div class="row bb">
+					<div class="col-xs-12 col-sm-12 col-md-12 foot-nav">
+						<img src="images/foot.png" height="30">
+						<div class="name-footer">@2018 三亚海棠湾南繁基地</div>
+					</div>	
+				</div>
+			</div>
+			<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+			<script src="js/video.min.js"></script>
+			<!-- <script type="text/javascript" src="boot/dist/js/bootstrap.min.js"></script> -->
+			<script src="tubiao-js/echarts3.js"></script>
+			<script src="js/echarts.js"></script>
+			<script src="tubiao-js/common.js"></script>
+			<script src="tubiao-js/wenshidu.js"></script>
+			<script src="tubiao-js/shed.js"></script>
+
+			<script src="tubiao-js/ditu.js"></script>
+			<script src="tubiao-js/shuiwei2.js"></script>
+			<!-- <script src="tubiao-js/rongjieyang.js"></script> -->
+			<!-- <script src="tubiao-js/ph.js"></script> -->
+			<script>
+				function zeroFill(i){  
+					if (i >= 0 && i <= 9) {  
+						return "0" + i;  
+					} else {  
+						return i;  
+					}  
+				}
+				function timer(){
+					var date = new Date();//当前时间  
+				    var month = zeroFill(date.getMonth() + 1);//月  
+				    var day = zeroFill(date.getDate());//日  
+				    var hour = zeroFill(date.getHours());//时  
+				    var minute = zeroFill(date.getMinutes());//分  
+				    var second = zeroFill(date.getSeconds());//秒  
+				    //当前时间  
+				    var curTime = date.getFullYear() + "-" + month + "-" + day  
+				    + " " + hour + ":" + minute + ":" + second;  
+				    console.log(curTime); 
+				    $(".timer").html(curTime);					
+				}
+				setInterval(timer,1000);	   
+			</script>			
+		</body>
+		</html>
+
